@@ -1,0 +1,19 @@
+li {
+  text-decoration: none;
+  list-style: none;
+}
+.starship-item {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+}
+
+.starship-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
