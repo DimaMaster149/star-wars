@@ -16,25 +16,17 @@
       </li>
     </ul>
 
-    <router-link :to="{name: 'Starships'}"> Return to starship list </router-link> 
+    <router-link :to="{ name: 'Starships' }"> Return to starship list </router-link> 
   </div>
 </template>
 
 <script>
-import * as StarShipService from '@/services/StarShipService';
-
 export default {
   name: 'StarShipDetailedItem',
-  data() {
-    return {
-      starshipInfo: {}
+  computed: {
+    starshipInfo() {
+      return this.$store.getters.starshipById(this.$route.params.id);
     }
-  },
-  created() {
-    const { id } = this.$route.params;
-    StarShipService.fetchStarhip(id).then((res) => {
-      this.starshipInfo = res.data;
-    });
   },
 }
 </script>
