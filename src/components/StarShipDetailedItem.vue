@@ -28,5 +28,12 @@ export default {
       return this.$store.getters.starshipById(this.$route.params.id);
     }
   },
+  filters: {
+    toUpperCase(value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.toUpperCase();
+    }
+  }
 }
 </script>
